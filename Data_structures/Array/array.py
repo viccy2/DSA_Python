@@ -1,38 +1,46 @@
 # basic /dynamic /one dimensional array
-array = [1, 2, 3, 4, 5]
-print(array)
+array = [1, 5, 7, 9, 2, 4]
 
-# fixed size array
-fixed_array = [0] * 5
-print(fixed_array)
 
 # array transversal
-for i in range(len(array)):
-    print(array[i]),
-    end = ""
+def transverse_array():
+    for i in range(len(array)):
+        print(array[i])
+
 
 # array insertion
-a = 10
-b = 2
-array.insert(b, a)
-print(array)
+def add(data1, data2):
+    array.insert(data1, data2)
+    print(array)
+
 
 # array deletion
-c = 6
-if c in array:
-    array.remove(c)
-else:
-    print(c, 'not in array')
-print(array)
+def remove(data):
+    if data in array:
+        array.remove(data)
+        print(array)
+    else:
+        print(data, "not in array")
 
 
 # array searching
-def find_element(element):
-    for i in range(len(array)):
-        if array[i] == element:
-            print('found')
-        else:
-            print("element not found")
+def find_element(arr, target):
+    for i in range(len(arr)):
+        if arr[i] == target:
+            return i
+    return -1
 
 
-find_element(1)
+# find min of array
+def min_array(arr):
+    a = sorted(arr)
+    print(a[0])
+
+# find max of array
+def max_array(arr):
+    a = sorted(arr)
+    print(a[-1])
+
+
+ min_array(array)
+
