@@ -36,11 +36,26 @@ def min_array(arr):
     a = sorted(arr)
     print(a[0])
 
+
 # find max of array
 def max_array(arr):
     a = sorted(arr)
     print(a[-1])
 
 
- min_array(array)
+# find the minimum sum of N-1 element of array
+def minMax(arr):
+    min_val = 0
+    max_val = 0
+    length = len(arr)
 
+    arr.sort()
+    result = length - 1
+    for i in range(length - 1):
+        min_val += arr[i]
+        max_val += arr[result]
+        result -= 1
+    print(min_val, " ", max_val)
+
+
+minMax(array)
